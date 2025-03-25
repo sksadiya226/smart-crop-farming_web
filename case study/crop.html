@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌱 Smart Crop Advisory</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link rel="stylesheet" href="case.css">
+    <style>
+        body {
+           background-image: url('advice.jpg');
+           background-size: cover;
+           background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            
+        }
+        .container {
+            max-width: 900px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        select, button {
+            font-size: 1.1rem;
+        }
+        #advice {
+            font-weight: bold;
+            color: #1d3557;
+        }
+        #head{
+            color: green;
+            font-weight: bold;
+        }
+        .hide{
+            display: none;
+        }
+        h4{
+            color:green;
+            font-weight: bold;
+        }
+        .hide2{
+            display: none;
+        }
+        .head{
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    height: 55px;
+    background-color: rgb(119, 175, 36);
+  }
+  .b{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right:50px;
+  }
+  .b p{
+    padding-top: 20px;
+  }
+  .head i{
+    margin-right:30px;
+    margin-top: 15px;
+    margin-left: 30px;
+    font-size: 35px;
+  }
+  .b i:hover,.a i:hover{
+    transform: scale(1.3);
+    cursor: pointer;
+  }
+  .bar{
+    height:40px;
+    background-color: white;
+  }
+  .last{
+    margin-top: 0px;
+  }
+    </style>
+</head>
+<body>
+    <div class="head fixed-top">
+        <div class="a">
+        <i class="fa-brands fa-whatsapp" style="color: #f9fafa;"></i>
+        <i class="fa-brands fa-facebook" style="color: #f9fafa;"></i>
+        <i class="fa-brands fa-instagram " style="color: #f9fafa;"></i>
+        <i class="fa-brands fa-youtube" style="color: #f9fafa;"></i>
+        <i class="fa-brands fa-linkedin" style="color: #f9fafa;"></i>
+      </div>
+      <div class="b">
+        <i class="fa-solid fa-phone"  style="color: #fefefe;"></i>
+        <p style="font-size: 25px; color: white;">91-8688513879</p>
+        <i class="fa-solid fa-envelope" style="color: #fefefe;"></i>
+        <p style="font-size: 25px; color: white;">sksadiya445@gmail.com</p>
+      </div>
+      </div>
+<div class="bar"></div>
+<div class="container mt-4">
+    <h1 class="text-center  mb-4" id="head">🌾 Smart Crop Advisory System 🌾</h1>
+
+    <div class="card p-4 " id="heading">
+        <form id="cropForm">
+            <div class="mb-3">
+                <label class="form-label">🌱 Soil Type:</label>
+                <select id="soilType" class="form-select">
+                    <option value="sandy">Sandy</option>
+                    <option value="clay">Clay</option>
+                    <option value="loamy">Loamy</option>
+                    <option value="black">Black</option>
+                    <option value="red">Red</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">⚖️ Soil pH Level:</label>
+                <select id="pH" class="form-select">
+                    <option value="acidic">Acidic (Below 6.0)</option>
+                    <option value="neutral">Neutral (6.0 - 7.5)</option>
+                    <option value="alkaline">Alkaline (Above 7.5)</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">☔ Rainfall:</label>
+                <select id="rainfall" class="form-select">
+                    <option value="low">Low (Below 50 cm)</option>
+                    <option value="medium">Medium (50 - 100 cm)</option>
+                    <option value="high">High (Above 100 cm)</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">🌡️ Temperature:</label>
+                <select id="temperature" class="form-select">
+                    <option value="cold">Cold (Below 15°C)</option>
+                    <option value="moderate">Moderate (15 - 30°C)</option>
+                    <option value="hot">Hot (Above 30°C)</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">💧 Irrigation Availability:</label>
+                <select id="irrigation" class="form-select">
+                    <option value="none">No Irrigation</option>
+                    <option value="limited">Limited Irrigation</option>
+                    <option value="ample">Ample Irrigation</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100" style="font-size: 20px;">🌾 Get Crop Advice</button>
+        </form>
+
+        
+    </div>
+    <div class="card p-4 hide2" id="hiding" ><div id="advice" class="mt-4 p-3 text-center bg-light rounded shadow"></div></div>
+</div><br><br><br><br><br><br>
+<div class="bar"></div>
+    <div class="last">
+        
+        <div class="div">
+          <h1 style="color: #080707;font-size: 50px; margin-top: 0px;">Smart farming</h1>
+           <p style="font-size: 23px; padding-top: 10px;">Smart Crop Farming  that provides tools like soil testing, crop advisory and irrigation management to help farmers make decisions. It includes a shop for agricultural products and pest control solutions, ensuring smarter  farming. 🚜🌱</p>
+        </div>
+        <div class="div">
+          <h1>OUR PURPOSE</h1>
+            <li>Soil Testing</li>
+            <li>Crop Advisory</li>
+            <li>Pest Control Advisory</li>
+            <li>Irrigation management</li>
+        </div>
+        <div class="div">
+          <h1>PRODUCTS</h1>
+          <li>Bio fertilizers</li>
+          <li>Pesticides</li>
+          <li>Micronutrients</li>
+          <li>Smart Irrigation controller</li>
+          <li>Bio stimulants</li>
+        </div>
+        <div class="div">
+          <h1>SOLUTIONS</h1>
+          <li>Pest controlling service</li>
+          <li>Smart Irrigation management</li>
+          <li>Advising crops</li>
+          <li>Testing the Soil</li>
+          <li>Weather Condition based  advices</li>
+        </div>
+        <div class=" ab div">
+          <h1>GET IN TOUCH</h1>
+          <li><i class="fa-solid fa-phone" id="icon" style="color: #da4534; padding-right: 15px ;"></i>91-8688513879</li>
+          <li><i class="fa-solid fa-envelope"id="icon" style="color: #da4534; padding-right: 15px;"></i>sksadiya445@gmail.com</li>
+          <li><i class="fa-solid fa-location-dot"  id="icon"style="color: #da4534; padding-right: 15px;"></i>SRM University AP, Neerukonda, Mangalagiri, Andhra pradesh district PINCODE: 522426 </li>
+        </div>
+      </div>
+      <div class="footer">
+          <h3>@ALL COPY RIGHTS RESERVED</h3>
+          <h5>PRIVACY POLICY</h5>
+          <p>DEVELOPED BY SADIYA SHAIK</p>
+      </div>
+
+
+    <script>
+    document.getElementById("cropForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent page refresh
+
+        // Get user inputs
+        let soilType = document.getElementById("soilType").value;
+        let pH = document.getElementById("pH").value;
+        let rainfall = document.getElementById("rainfall").value;
+        let temperature = document.getElementById("temperature").value;
+
+        let advice = "<h4 >🌿 Recommended Crops:</h4>";
+
+        // Crop Suggestions based on Soil Type
+        if (soilType === "sandy") {
+            advice += "<p>🌾 Suitable Crops: Millets, Groundnut, Watermelon.</p>";
+        } else if (soilType === "clay") {
+            advice += "<p>🌾 Suitable Crops: Rice, Wheat, Sugarcane.</p>";
+        } else if (soilType === "loamy") {
+            advice += "<p>🌾 Suitable Crops: Wheat, Maize, Vegetables.</p>";
+        } else if (soilType === "black") {
+            advice += "<p>🌾 Suitable Crops: Cotton, Jowar, Sunflower.</p>";
+        } else {
+            advice += "<p>🌾 Suitable Crops: Pulses, Oilseeds.</p>";
+        }
+
+        // Temperature-based Crops
+        if (temperature === "hot") {
+            advice += "<p>☀️ Best for: Bajra, Sorghum, Maize.</p>";
+        } else if (temperature === "cold") {
+            advice += "<p>❄️ Best for: Wheat, Barley, Mustard.</p>";
+        }
+
+        // Rainfall-based Crops
+        if (rainfall === "low") {
+            advice += "<p>💦 Drought-resistant Crops: Millets, Pulses.</p>";
+        } else if (rainfall === "high") {
+            advice += "<p>🌧️ High water crops: Rice, Sugarcane.</p>";
+        }
+
+        // Fertilizer Suggestions
+        advice += "<h4>💡 Fertilizer Suggestion:</h4>";
+        if (pH === "acidic") {
+            advice += "<p>🧪 Use Lime to increase pH.</p>";
+        } else if (pH === "alkaline") {
+            advice += "<p>🧪 Use Sulfur to lower pH.</p>";
+        } else {
+            advice += "<p>🧪 Use balanced NPK fertilizers.</p>";
+        }
+
+        // Display advice with smooth effect
+        let formContainer = document.getElementById("heading");
+    formContainer.classList.add("hide");
+
+    let adviceDiv = document.getElementById("advice");
+    let hideContainer = document.getElementById("hiding");
+
+    hideContainer.classList.remove("hide2"); // Show the advice section
+    adviceDiv.innerHTML = advice;
+        adviceDiv.style.display = "none"; // Hide first
+        setTimeout(() => {
+            adviceDiv.style.display = "block"; // Show with slight delay
+        },100);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌾 Smart Crop & Weather Advisory</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link rel="stylesheet" href="case.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .left-section {
+            background: url('clouds.png') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .right-section {
+            background-color: white;
+            padding: 40px;
+            height: 80vh;
+            box-shadow: -4px 0px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .navbar {
+            background-color: #2d6a4f;
+            color: white;
+        }
+
+        .navbar-brand {
+            color: white !important;
+        }
+
+        footer {
+            background-color: #2d6a4f;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .btn-custom {
+            background-color: #2d6a4f;
+            color: white;
+        }
+
+        .btn-custom:hover {
+            background-color: #1b4332;
+        }
+
+        @media (max-width: 768px) {
+            .left-section {
+                display: none;
+            }
+
+            .right-section {
+                width: 100%;
+            }
+        }
+        .bar{
+    height:60px;
+    background-color: white;
+  }
+  .bar2{
+    height:100px;
+    background-color: white;
+  }
+  .last{
+    margin-top: 0px;
+  }
+  .bar h1{
+    text-align: center;
+    color: green;
+    font-weight:1.5rem;
+  }
+  p{
+     font-size: 20px;
+  }
+  #forecast-info li{
+    font-size: 20px;
+  }
+  .button{
+    color: white;
+    background-color: #2d6a4f;
+  }
+  .button:hover{
+    font-size: 1.15rem;
+    color: white;
+    background-color: #2d6a4f;
+  }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="head fixed-top">
+    <div class="a">
+    <i class="fa-brands fa-whatsapp" style="color: #f9fafa;"></i>
+    <i class="fa-brands fa-facebook" style="color: #f9fafa;"></i>
+    <i class="fa-brands fa-instagram " style="color: #f9fafa;"></i>
+    <i class="fa-brands fa-youtube" style="color: #f9fafa;"></i>
+    <i class="fa-brands fa-linkedin" style="color: #f9fafa;"></i>
+  </div>
+  <div class="b">
+    <i class="fa-solid fa-phone"  style="color: #fefefe;"></i>
+    <p style="font-size: 25px; color: white;">91-8688513879</p>
+    <i class="fa-solid fa-envelope" style="color: #fefefe;"></i>
+    <p style="font-size: 25px; color: white;">sksadiya445@gmail.com</p>
+  </div>
+  </div>
+  <div class="bar"><h1>Weather Based farming suggestions</h1></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Left Section (Image) -->
+        <div class="col-md-6 left-section"></div>
+
+        <!-- Right Section (Content) -->
+        <div class="col-md-6 right-section">
+            <h2 class="mb-4" style="color: #2d6a4f;"><b>🌦️ Weather Updates</b></h2>
+
+            <!-- Weather Info -->
+            <div class="card p-4">
+                <h4><b>Current Weather</b></h4>
+                <p id="weather-info">Click below to fetch current weather updates!</p>
+                <button class="btn  mt-3 w-100 button" onclick="fetchWeather()">📍 Get Weather Info</button>
+            </div>
+
+            <!-- Crop Advice -->
+            <div class="card p-4">
+                <h4><b>🌿 Crop & Irrigation Advice</b></h4>
+                <p id="advice-info">Fetching crop and irrigation advice...</p>
+            </div>
+
+            <!-- Forecast Section -->
+            <div class="card p-4">
+                <h4><b>📅 4-Day Weather Forecast</b></h4>
+                <p id="forecast-info">Fetching forecast details...</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bar2"></div>
+<div class="last">
+    <div class="div">
+      <h1 style="color: #080707;font-size: 50px; margin-top: 0px;">Smart farming</h1>
+       <p style="font-size: 23px; padding-top: 10px;">Smart Crop Farming  that provides tools like soil testing, crop advisory and irrigation management to help farmers make decisions. It includes a shop for agricultural products and pest control solutions, ensuring smarter  farming. 🚜🌱</p>
+    </div>
+    <div class="div">
+      <h1>OUR PURPOSE</h1>
+        <li>Soil Testing</li>
+        <li>Crop Advisory</li>
+        <li>Pest Control Advisory</li>
+        <li>Irrigation management</li>
+    </div>
+    <div class="div">
+      <h1>PRODUCTS</h1>
+      <li>Bio fertilizers</li>
+      <li>Pesticides</li>
+      <li>Micronutrients</li>
+      <li>Smart Irrigation controller</li>
+      <li>Bio stimulants</li>
+    </div>
+    <div class="div">
+      <h1>SOLUTIONS</h1>
+      <li>Pest controlling service</li>
+      <li>Smart Irrigation management</li>
+      <li>Advising crops</li>
+      <li>Testing the Soil</li>
+      <li>Weather Condition based  advices</li>
+    </div>
+    <div class=" ab div">
+      <h1>GET IN TOUCH</h1>
+      <li><i class="fa-solid fa-phone" id="icon" style="color: #da4534; padding-right: 15px ;"></i>91-8688513879</li>
+      <li><i class="fa-solid fa-envelope"id="icon" style="color: #da4534; padding-right: 15px;"></i>sksadiya445@gmail.com</li>
+      <li><i class="fa-solid fa-location-dot"  id="icon"style="color: #da4534; padding-right: 15px;"></i>SRM University AP, Neerukonda, Mangalagiri, Andhra pradesh district PINCODE: 522426 </li>
+    </div>
+  </div>
+  <div class="footer">
+      <h3>@ALL COPY RIGHTS RESERVED</h3>
+      <h5>PRIVACY POLICY</h5>
+      <p>DEVELOPED BY SADIYA SHAIK</p>
+  </div> 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const apiKey = "5c46fc8e289e3c657fbcdb83a6afc9e1"; 
+
+    async function fetchWeather() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(async function(position) {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+                const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&cnt=4&appid=${apiKey}`;
+                const weatherResponse = await fetch(weatherUrl);
+                const weatherData = await weatherResponse.json();
+                const temp = weatherData.main.temp;
+                const humidity = weatherData.main.humidity;
+                const condition = weatherData.weather[0].description;
+                document.getElementById("weather-info").innerHTML = `
+                    <p>🌡️ Temperature: ${temp}°C</p>
+                    <p>💧 Humidity: ${humidity}%</p>
+                    <p>🌦️ Condition: ${condition}</p>
+                `;
+                const forecastResponse = await fetch(forecastUrl);
+                const forecastData = await forecastResponse.json();
+                let forecastHtml = "<ul>";
+                forecastData.list.forEach((day, index) => {
+                    forecastHtml += `<li><b>Day ${index + 1}:</b> ${day.main.temp}°C - ${day.weather[0].description}</li>`;
+                });
+                forecastHtml += "</ul>";
+                document.getElementById("forecast-info").innerHTML = forecastHtml;
+                document.getElementById("advice-info").innerHTML = getCropAdvice(temp);
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    function getCropAdvice(temp) {
+        if (temp > 30) {
+            return "<p>🌾 Recommended Crops: Millets, Sorghum. Use Drip Irrigation.</p>";
+        } else if (temp > 20) {
+            return "<p>🌾 Recommended Crops: Wheat, Rice. Use Sprinkler Irrigation.</p>";
+        } else {
+            return "<p>🌾 Recommended Crops: Mustard, Peas. Use Limited Irrigation.</p>";
+        }
+    }
+</script>
+
+</body>
+
+</html>

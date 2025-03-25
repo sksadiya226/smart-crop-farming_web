@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 Modern Irrigation Advisor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="case.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+    <style>
+        body {
+            background-image: url('water.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Poppins', sans-serif;
+        }
+        .container {
+            margin: 50px auto;
+            max-width: 650px;
+        }
+        .card {
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+        }
+        .form-section {
+            padding: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        button {
+            font-size: 1.1rem;
+            border-radius: 10px;
+        }
+        .icon-step {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 20px;
+        }
+        .icon-step div {
+            text-align: center;
+        }
+        .icon-step img {
+            width: 65px;
+            border-radius: 50%;
+            border: 2px solid #28a745;
+            margin-bottom: 5px;
+        }
+        #result {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #155724;
+        }
+        p{
+            font-size: 20px;
+            font-weight:1.4rem;
+        }
+        .bar{
+    height:50px;
+    background-color: white;
+  }
+  .last{
+    margin-top: 0px;
+  }
+    </style>
+</head>
+<body>
+    <div class="head fixed-top">
+        <div class="a">
+        <i class="fa-brands fa-whatsapp" style="color: #f9fafa;"></i>
+        <i class="fa-brands fa-facebook" style="color: #f9fafa;"></i>
+        <i class="fa-brands fa-instagram " style="color: #f9fafa;"></i>
+        <i class="fa-brands fa-youtube" style="color: #f9fafa;"></i>
+        <i class="fa-brands fa-linkedin" style="color: #f9fafa;"></i>
+      </div>
+      <div class="b">
+        <i class="fa-solid fa-phone"  style="color: #fefefe;"></i>
+        <p style="font-size: 25px; color: white;">91-8688513879</p>
+        <i class="fa-solid fa-envelope" style="color: #fefefe;"></i>
+        <p style="font-size: 25px; color: white;">sksadiya445@gmail.com</p>
+      </div>
+      </div>
+      <div class="bar"></div>
+<div class="container">
+    <div class="card">
+        <div class="header">
+            <h1>🌿💧 Smart Irrigation Advisor</h1>
+        </div>
+        <div class="form-section">
+            <form id="irrigationForm">
+                <div class="icon-step">
+                    <div>
+                        <img src="plant.png" alt="Soil">
+                        <p>Soil</p>
+                    </div>
+                    <div>
+                        <img src="corn.png" alt="Crop">
+                        <p>Crop</p>
+                    </div>
+                    <div>
+                        <img src="water.png" alt="Water">
+                        <p>Water</p>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label>🌱 Select Soil Type:</label>
+                    <div class="form-check">
+                        <input type="radio" name="soilType" value="sandy" id="soilSandy" class="form-check-input" checked>
+                        <label for="soilSandy" class="form-check-label">Sandy</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="soilType" value="clay" id="soilClay" class="form-check-input">
+                        <label for="soilClay" class="form-check-label">Clay</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="soilType" value="loamy" id="soilLoamy" class="form-check-input">
+                        <label for="soilLoamy" class="form-check-label">Loamy</label>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="cropType">🌾 Select Crop Type:</label>
+                    <select id="cropType" class="form-select">
+                        <option value="rice">Rice</option>
+                        <option value="wheat">Wheat</option>
+                        <option value="maize">Maize</option>
+                        <option value="cotton">Cotton</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label>💧 Water Availability:</label>
+                    <div class="form-check">
+                        <input type="radio" name="waterLevel" value="low" id="waterLow" class="form-check-input" checked>
+                        <label for="waterLow" class="form-check-label">Low</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="waterLevel" value="medium" id="waterMedium" class="form-check-input">
+                        <label for="waterMedium" class="form-check-label">Medium</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="waterLevel" value="high" id="waterHigh" class="form-check-input">
+                        <label for="waterHigh" class="form-check-label">High</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Generate Advice</button>
+            </form>
+        </div>
+    </div>
+    <div class="card mt-4 d-none" id="resultCard"><br><br>
+        <div class="icon-step">
+            <div>
+                <img src="plant.png" alt="Soil">
+                <p>Soil</p>
+            </div>
+            <div>
+                <img src="corn.png" alt="Crop">
+                <p>Crop</p>
+            </div>
+            <div>
+                <img src="water.png" alt="Water">
+                <p>Water</p>
+            </div>
+        </div>
+        <div id="result" class="p-4"></div>
+    </div>
+</div>
+<div class="bar"></div>
+    <div class="last">
+        <div class="div">
+          <h1 style="color: #080707;font-size: 50px; margin-top: 0px;">Smart farming</h1>
+           <p style="font-size: 23px; padding-top: 10px;">Smart Crop Farming  that provides tools like soil testing, crop advisory and irrigation management to help farmers make decisions. It includes a shop for agricultural products and pest control solutions, ensuring smarter  farming. 🚜🌱</p>
+        </div>
+        <div class="div">
+          <h1>OUR PURPOSE</h1>
+            <li>Soil Testing</li>
+            <li>Crop Advisory</li>
+            <li>Pest Control Advisory</li>
+            <li>Irrigation management</li>
+        </div>
+        <div class="div">
+          <h1>PRODUCTS</h1>
+          <li>Bio fertilizers</li>
+          <li>Pesticides</li>
+          <li>Micronutrients</li>
+          <li>Smart Irrigation controller</li>
+          <li>Bio stimulants</li>
+        </div>
+        <div class="div">
+          <h1>SOLUTIONS</h1>
+          <li>Pest controlling service</li>
+          <li>Smart Irrigation management</li>
+          <li>Advising crops</li>
+          <li>Testing the Soil</li>
+          <li>Weather Condition based  advices</li>
+        </div>
+        <div class=" ab div">
+          <h1>GET IN TOUCH</h1>
+          <li><i class="fa-solid fa-phone" id="icon" style="color: #da4534; padding-right: 15px ;"></i>91-8688513879</li>
+          <li><i class="fa-solid fa-envelope"id="icon" style="color: #da4534; padding-right: 15px;"></i>sksadiya445@gmail.com</li>
+          <li><i class="fa-solid fa-location-dot"  id="icon"style="color: #da4534; padding-right: 15px;"></i>SRM University AP, Neerukonda, Mangalagiri, Andhra pradesh district PINCODE: 522426 </li>
+        </div>
+      </div>
+      <div class="footer">
+          <h3>@ALL COPY RIGHTS RESERVED</h3>
+          <h5>PRIVACY POLICY</h5>
+          <p>DEVELOPED BY SADIYA SHAIK</p>
+      </div>  
+<script>
+    document.getElementById("irrigationForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        let soilType = document.querySelector('input[name="soilType"]:checked').value;
+        let cropType = document.getElementById("cropType").value;
+        let waterLevel = document.querySelector('input[name="waterLevel"]:checked').value;
+        let advice = `<h2>💧 Recommended Irrigation:</h2>`;
+        if (soilType === "sandy") {
+            advice += "<p>🌱 Sandy soil needs frequent, light watering due to poor retention.</p>";
+        } else if (soilType === "clay") {
+            advice += "<p>🌱 Clay soil retains water; avoid overwatering to prevent root rot.</p>";
+        } else {
+            advice += "<p>🌱 Loamy soil is balanced; moderate, deep watering recommended.</p>";
+        }
+        if (cropType === "rice") {
+            advice += "<p>🌾 Rice thrives in standing water; flood irrigation is best.</p>";
+        } else if (cropType === "wheat") {
+            advice += "<p>🌾 Wheat needs medium irrigation with well-drained soil.</p>";
+        } else if (cropType === "maize") {
+            advice += "<p>🌾 Maize benefits from deep watering every few days.</p>";
+        } else {
+            advice += "<p>🌾 Cotton requires spaced, light irrigation for better growth.</p>";
+        }
+        if (waterLevel === "low") {
+            advice += "<p>💡 Drip irrigation is recommended to conserve water.</p>";
+        } else if (waterLevel === "medium") {
+            advice += "<p>✅ Sprinkler irrigation can efficiently maintain moisture.</p>";
+        } else {
+            advice += "<p>💧 High availability allows flexible methods like flood irrigation.</p>";
+        }
+        let resultCard = document.getElementById("resultCard");
+        resultCard.classList.remove("d-none");
+        let main = document.querySelector(".form-section");
+        main.classList.add("d-none");
+        document.getElementById("result").innerHTML = advice;
+    });
+</script>
+
+</body>
+</html>

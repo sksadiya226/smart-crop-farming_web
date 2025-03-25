@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 Soil Testing Advisor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="case.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #a8d5e2, #d1e7d6);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 30px auto;
+            max-width: 900px;
+        }
+        .header {
+            text-align: center;
+            padding: 30px;
+            background-color: #3b803a;
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .header h1 {
+            font-size: 2.5rem;
+        }
+        .main-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .form-section {
+            flex: 1;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+        }
+        .form-section h2 {
+            text-align: center;
+            color: #00796b;
+            margin-bottom: 20px;
+        }
+        .form-label{
+          font-size: 20px;
+          
+        }
+        .btn-submit {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            background-color: #3b803a;
+            color: white;
+            border-radius: 10px;
+            width: 100%;
+        }
+        .image-section {
+            flex: 1;
+            text-align: center;
+        }
+        .image-section img {
+            width: 100%;
+            max-width: 1000px;
+            height: 850px;
+            border-radius: 15px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            background-color: #00796b;
+            color: white;
+            border-radius: 15px;
+        }
+        .result-card {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .main{
+          display: flex;
+        }
+        p{
+          font-size: 20px;
+          font-weight: 1.3rem;
+        }
+        .bar{
+    height:50px;
+    background-color: white;
+  }
+  .last{
+    margin-top: 0px;
+  }
+    </style>
+</head>
+<body>
+    <div class="head fixed-top">
+        <div class="a">
+        <i class="fa-brands fa-whatsapp" style="color: #f9fafa;"></i>
+        <i class="fa-brands fa-facebook" style="color: #f9fafa;"></i>
+        <i class="fa-brands fa-instagram " style="color: #f9fafa;"></i>
+        <i class="fa-brands fa-youtube" style="color: #f9fafa;"></i>
+        <i class="fa-brands fa-linkedin" style="color: #f9fafa;"></i>
+      </div>
+      <div class="b">
+        <i class="fa-solid fa-phone"  style="color: #fefefe;"></i>
+        <p style="font-size: 25px; color: white;">91-8688513879</p>
+        <i class="fa-solid fa-envelope" style="color: #fefefe;"></i>
+        <p style="font-size: 25px; color: white;">sksadiya445@gmail.com</p>
+      </div>
+      </div>
+      <div class="bar"></div>
+<div class="main">
+<div class="container">
+    <div class="header">
+        <h1>🌿 Soil Testing Advisor</h1>
+        <p>Analyze soil properties and crop suitability with ease!</p>
+    </div>
+
+    <div class="main-content">
+        <div class="form-section">
+            <h2>🧪 Soil Analysis Form</h2>
+            <form id="soilForm">
+                <div class="mb-4">
+                    <label for="soilType" class="form-label">🌱 Select Soil Type:</label>
+                    <select id="soilType" class="form-select">
+                        <option value="sandy">Sandy</option>
+                        <option value="clay">Clay</option>
+                        <option value="loamy">Loamy</option>
+                        <option value="silty">Silty</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label for="cropType" class="form-label">🌾 Select Crop Type:</label>
+                    <select id="cropType" class="form-select">
+                        <option value="rice">Rice</option>
+                        <option value="wheat">Wheat</option>
+                        <option value="maize">Maize</option>
+                        <option value="cotton">Cotton</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label for="waterLevel" class="form-label">💧 Water Availability:</label>
+                    <select id="waterLevel" class="form-select">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label for="phLevel" class="form-label">🧪 Soil pH Level (0-14):</label>
+                    <input type="number" id="phLevel" class="form-control" min="0" max="14" step="0.1" placeholder="Enter pH level" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Get Soil Analysis</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Result Section -->
+    <div id="resultCard" class="result-card ">
+        <h2>🌿 Soil Analysis Results:</h2>
+        <div id="result"></div>
+    </div>
+
+</div>
+
+<div class="image-section">
+  <img src="testing.jpg" alt="Soil Testing">
+</div>
+</div>
+<div class="last">
+  <div class="div">
+    <h1 style="color: #080707;font-size: 50px; margin-top: 0px;">Smart farming</h1>
+     <p style="font-size: 23px; padding-top: 10px;">Smart Crop Farming  that provides tools like soil testing, crop advisory and irrigation management to help farmers make decisions. It includes a shop for agricultural products and pest control solutions, ensuring smarter  farming. 🚜🌱</p>
+  </div>
+  <div class="div">
+    <h1>OUR PURPOSE</h1>
+      <li>Soil Testing</li>
+      <li>Crop Advisory</li>
+      <li>Pest Control Advisory</li>
+      <li>Irrigation management</li>
+  </div>
+  <div class="div">
+    <h1>PRODUCTS</h1>
+    <li>Bio fertilizers</li>
+    <li>Pesticides</li>
+    <li>Micronutrients</li>
+    <li>Smart Irrigation controller</li>
+    <li>Bio stimulants</li>
+  </div>
+  <div class="div">
+    <h1>SOLUTIONS</h1>
+    <li>Pest controlling service</li>
+    <li>Smart Irrigation management</li>
+    <li>Advising crops</li>
+    <li>Testing the Soil</li>
+    <li>Weather Condition based  advices</li>
+  </div>
+  <div class=" ab div">
+    <h1>GET IN TOUCH</h1>
+    <li><i class="fa-solid fa-phone" id="icon" style="color: #da4534; padding-right: 15px ;"></i>91-8688513879</li>
+    <li><i class="fa-solid fa-envelope"id="icon" style="color: #da4534; padding-right: 15px;"></i>sksadiya445@gmail.com</li>
+    <li><i class="fa-solid fa-location-dot"  id="icon"style="color: #da4534; padding-right: 15px;"></i>SRM University AP, Neerukonda, Mangalagiri, Andhra pradesh district PINCODE: 522426 </li>
+  </div>
+</div>
+<div class="footer">
+    <h3>@ALL COPY RIGHTS RESERVED</h3>
+    <h5>PRIVACY POLICY</h5>
+    <p>DEVELOPED BY SADIYA SHAIK</p>
+</div> 
+
+<script>
+document.getElementById("soilForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let soilType = document.getElementById("soilType").value;
+    let cropType = document.getElementById("cropType").value;
+    let waterLevel = document.getElementById("waterLevel").value;
+    let phLevel = parseFloat(document.getElementById("phLevel").value);
+
+    let advice = `<h3>🌿 Soil Analysis:</h3>`;
+
+    // Soil Type Analysis
+    if (soilType === "sandy") {
+        advice += "<p>🔹 Sandy soil drains quickly and needs frequent watering.</p>";
+    } else if (soilType === "clay") {
+        advice += "<p>🔹 Clay soil retains water; avoid overwatering.</p>";
+    } else if (soilType === "loamy") {
+        advice += "<p>🔹 Loamy soil is ideal for most crops with balanced nutrients.</p>";
+    } else {
+        advice += "<p>🔹 Silty soil is nutrient-rich but needs good drainage.</p>";
+    }
+
+    // Crop Suitability
+    if (cropType === "rice") {
+        advice += "<p>🌾 Rice needs standing water, best for loamy or clay soil.</p>";
+    } else if (cropType === "wheat") {
+        advice += "<p>🌾 Wheat prefers well-drained soil with medium irrigation.</p>";
+    } else if (cropType === "maize") {
+        advice += "<p>🌾 Maize needs deep watering every few days.</p>";
+    } else {
+        advice += "<p>🌾 Cotton thrives in sandy or loamy soil with moderate irrigation.</p>";
+    }
+
+    // Water Level Recommendation
+    if (waterLevel === "low") {
+        advice += "<p>💡 Drip irrigation is recommended for water conservation.</p>";
+    } else if (waterLevel === "medium") {
+        advice += "<p>✅ Sprinkler irrigation can be used for even moisture.</p>";
+    } else {
+        advice += "<p>💧 High water availability allows flexible irrigation methods.</p>";
+    }
+
+    // pH Level Analysis
+    if (phLevel < 5.5) {
+        advice += "<p>⚠️ Soil is <strong>Acidic</strong>. Add lime to neutralize.</p>";
+    } else if (phLevel >= 5.5 && phLevel <= 7.5) {
+        advice += "<p>✅ Soil pH is <strong>Neutral</strong>. Suitable for most crops.</p>";
+    } else {
+        advice += "<p>⚠️ Soil is <strong>Alkaline</strong>. Use gypsum to reduce pH.</p>";
+    }
+
+    // Display Results
+    document.getElementById("result").innerHTML = advice;
+    let abc=document.querySelector(".main-content")
+    abc.style.display="none"
+    document.getElementById("resultCard").style.display = "block";
+});
+</script>
+
+</body>
+</html>
